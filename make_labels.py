@@ -18,20 +18,21 @@ from borb.pdf.pdf import PDF
 import pandas as pd
 
 df = pd.read_csv("test.csv")
-circuits = []
+circuits = ''
 for circuit in df.iloc[1].circuits.split(';'):
-    circuits.append(circuit+"\n")
+    circuits = (circuits + circuit+"\n")
 
-print(df)
+print(circuits)
 
-doc: Document = Document()
-page: Page = Page()
+doc = Document()
+page = Page()
 doc.append_page(page)
 
-m: Decimal = Decimal(5)
+m = Decimal(5)
 
-p: Paragraph = Paragraph(
+p = Paragraph(
     circuits,
+    # "master bed room lights\n master bed room plugs\n Master bath lights\n",
     # margin
     margin_top=m,
     margin_left=m,
@@ -52,10 +53,10 @@ p: Paragraph = Paragraph(
 )
 
 # the next line of code uses absolute positioning
-r: Rectangle = Rectangle(
+r = Rectangle(
     Decimal(59),  # x: 0 + page_margin
     Decimal(848 - 84 - 100),  # y: page_height - page_margin - height_of_textbox
-    Decimal(595 - 59 * 2),  # width: page_width - 2 * page_margin
+    Decimal(160),  # width: page_width - 2 * page_margin
     Decimal(100),
 )  # height
 
