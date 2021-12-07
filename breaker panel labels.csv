@@ -1,53 +1,53 @@
-﻿number,amp,circuits,panel,room,floor,energy tracted?
-1,30,water heater,subpanel,basement,basement,y
-3,30,water heater,subpanel,basement,basement,y
-5,20,Fridge,subpanel,kitchen,1st,
-7,15,master bed room lights; master bed room plugs;  Master bath lights,subpanel,master bed,2nd,
+﻿number,amp,circuits,panel,room,floor,vue_number
+1,30,water heater,subpanel,basement,basement,
+3,30,water heater,subpanel,basement,basement,1
+5,20,Fridge,subpanel,kitchen,1st,3
+7,15,master bed room lights; master bed room plugs;  Master bath lights,subpanel,master bed,2nd,9
 9,15,"hall way lights. hall way plugs, laundary room light.  Smoke and attic?",subpanel,hall and laundary,2nd,
-11,20,TV Closet,subpanel,tv room,1st,
-2,15,"Kitchen light, mud room light",subpanel,kitchen and mud,1st,
-4,20,furance,subpanel,basement,basement,
-6,20,"chest freezer, work bench. Water treatment",subpanel,basement,basement,
+11,20,TV Closet,subpanel,tv room,1st,5
+2,15,"Kitchen light, mud room light, office light",subpanel,kitchen and mud,1st,
+4,20,furance,subpanel,basement,basement,2
+6,20,"chest freezer, work bench. Water treatment",subpanel,basement,basement,4
 8,20,well,subpanel,basement,basement,
 10,20,well,subpanel,basement,basement,
-12,15,bonus room plugs. Bonus room light,subpanel,bonus room,2nd,
+12,15,bonus room plugs. Bonus room light,subpanel,bonus room,2nd,6
 1,15,stove room light/fan.  front porch lights.  Front door Can lights,main,stove porch,1st,
 3,15,TV room plugs,main,TV room,1st,
-5,15,"haileys room, plugs, fan, light",main,haileys room,2nd,
-7,15,"TV can lights.  Kitchen fan/light, back porch light and GFI",main,TV room porch,1st,
-9,15,"Callies room plugs, fan, light",main,callies room,2nd,
+5,15,"plugs, fan, light",main,haileys room,2nd,7
+7,15,"TV can lights.  Kitchen fan/light, back porch light / GFI",main,TV room porch,1st,
+9,15,"plugs, fan, light",main,callies room,2nd,8
 11,,EMPTY,main,,,
 13,,EMPTY,main,,,
-15,20,"master bath plugs, guest bath room plugs",main,bath rooms,2nd,
+15,20,"master bath plugs, guest bath plugs",main,bath rooms,2nd,
 17,100,sub-panel,main,basement,basement,
 19,100,sub-panel,main,basement,basement,
 21,20,washer,main,laundry room,2nd,
-23,30,dryer,main,laundry room,2nd,
+23,30,dryer,main,laundry room,2nd,12
 25,30,dryer,main,laundry room,2nd,
-27,20,kitchen counter corner plugs 4x,main,kitchen,1st,
+27,20,4 counter corner plugs,main,kitchen,1st,
 29,,EMPTY,main,,,
-31,15,"plugs in stove room, GFI outside of stove room",main,stove porch,1st,
+31,15,"plugs, porch GFI",main,stove porch,1st,
 33,20,locus,main,basement,basement,
 35,20,locus,main,basement,basement,
 37,40,Solar,main,basement,basement,
-39,40,solar,main,basement,basement,
+39,40,solar,main,basement,basement,16
 2,50,surge protector,main,basement,basement,
 4,50,surge protector,main,basement,basement,
 6,15,dish washer,main,kitchen,1st,
 8,15,"kitchen disposal , light over kit sink",main,kitchen,1st,
 10,15,"garage door ropeners , garage lights",main,garage,1st,
 12,15,"garage plugs, mudroom plugs",main,garage mud,1st,
-14,20,"office plugs, (outside GFI)",main,office porch,1st,
-16,20,2 kitchen plugs left of sink.  Plug under island,main,kitchen,1st,
+14,20,"office plugs, porch GFI",main,office porch,1st,
+16,20,2 plugs left of sink.  Plug under island,main,kitchen,1st,10
 18,,EMPTY,main,,,
-20,40,,main,,,
-22,,,main,,,
+20,40,A/C,main,outside,outside,
+22,40,A/C,main,outside,outside,11
 24,,EMPTY,main,,,
-26,100,,main,,,
-28,,,main,,,
+26,100,Barn,main,outside,outside,13
+28,100,Barn,main,outside,outside,
 30,15,Basement lights,main,basement,basement,
-32,40,hot tub,main,outside,outside,
+32,40,hot tub,main,outside,outside,14
 34,40,hut tub,main,outside,outside,
-36,40,,main,,,
-38,,,main,,,
-40,20,,main,,,
+36,40,oven,main,kitchen,1st,
+38,40,oven,main,kitchen,1st,15
+40,20,panel plug,main,basement,basement,
