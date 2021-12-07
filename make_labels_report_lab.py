@@ -12,6 +12,8 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 from reportlab.lib import colors
 from reportlab.pdfbase.pdfmetrics import stringWidth
+from reportlab.platypus import Table, SimpleDocTemplate, TableStyle
+from reportlab.lib.pagesizes import letter
 
 import pandas as pd
 import math
@@ -133,8 +135,42 @@ for panel in panels:
                 c.setLineWidth(2)
                 c.setStrokeColor(colors.darkblue)
                 c.circle(x+box_w-10+tweak[0],y+13+tweak[1], 0.13*inch, fill=0)                
-
-
         c.drawText(circ_num_obj)
     c.showPage()
     c.save()
+
+    doc = SimpleDocTemplate(panel + "circuit_table.pdf", pagesize=letter, topMargin=inch/2)
+    elements=[]
+    # make table of circuits sorted by floor and room
+    table_df = df[df.circuits != 'EMPTY'][df['panel'] == panel].sort_values(['floor', 'room'])
+    table_df = table_df.drop('panel', axis='columns')
+    # reset index after sort
+    table_df = table_df.reset_index()
+    column_list = table_df.columns.values.tolist()
+    second = table_df.index[table_df['floor'] == '2nd'].tolist()
+    first = table_df.index[table_df['floor'] == '1st'].tolist()
+    basement = table_df.index[table_df['floor'] == 'basement'].tolist()
+    outside = table_df.index[table_df['floor'] == 'outside'].tolist()
+    data_list = table_df.values.tolist()
+    data_list.insert(0,column_list)
+    table = Table(data_list,style=[
+        ('GRID',(0,0),(-1,-1),1,colors.black)])
+    if first:
+        table.setStyle(TableStyle([
+            ('GRID',(0,first[0]+1),(-1,first[-1]+1),2,colors.green)
+        ]))
+    if second:
+        table.setStyle(TableStyle([
+            ('GRID',(0,second[0]+1),(-1,second[-1]+1),2,colors.red)
+        ]))
+    if basement:
+        table.setStyle(TableStyle([
+            ('GRID',(0,basement[0]+1),(-1,basement[-1]+1),2,colors.blue)
+        ]))
+    if outside:
+        table.setStyle(TableStyle([
+            ('GRID',(0,outside[0]+1),(-1,outside[-1]+1),2,colors.brown)
+        ]))
+
+    elements.append(table)
+    doc.build(elements)
