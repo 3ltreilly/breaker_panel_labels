@@ -5,7 +5,7 @@
 7,15,master bed room lights; master bed room plugs;  Master bath lights,subpanel,master bed,2nd,9
 9,15,"hall way lights. hall way plugs, laundary room light.  Smoke and attic?",subpanel,hall and laundary,2nd,
 11,20,TV Closet,subpanel,tv room,1st,5
-2,15,"Kitchen light, mud room light, office light",subpanel,kitchen and mud,1st,
+2,15,"Kitchen light, mud room light, office light",subpanel,"kitchen, mud, office",1st,
 4,20,furance,subpanel,basement,basement,2
 6,20,"chest freezer, work bench. Water treatment",subpanel,basement,basement,4
 8,20,well,subpanel,basement,basement,
@@ -35,8 +35,8 @@
 4,50,surge protector,main,basement,basement,
 6,15,dish washer,main,kitchen,1st,
 8,15,"kitchen disposal , light over kit sink",main,kitchen,1st,
-10,15,"garage door ropeners , garage lights",main,garage,1st,
-12,15,"garage plugs, mudroom plugs",main,garage mud,1st,
+10,15,"garage door openers, garage lights",main,garage,1st,
+12,15,"garage plugs, mud room plugs",main,garage mud,1st,
 14,20,"office plugs, porch GFI",main,office porch,1st,
 16,20,2 plugs left of sink.  Plug under island,main,kitchen,1st,10
 18,,EMPTY,main,,,

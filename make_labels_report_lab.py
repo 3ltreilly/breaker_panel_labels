@@ -146,6 +146,7 @@ for panel in panels:
     table_df = table_df.drop('panel', axis='columns')
     # reset index after sort
     table_df = table_df.reset_index()
+    table_df = table_df.drop('index', axis='columns')
     column_list = table_df.columns.values.tolist()
     second = table_df.index[table_df['floor'] == '2nd'].tolist()
     first = table_df.index[table_df['floor'] == '1st'].tolist()
