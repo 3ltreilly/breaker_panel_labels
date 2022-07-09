@@ -10,6 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
+            "args": ["breaker panel labels.csv"],
             "justMyCode": true
         }
     ]
