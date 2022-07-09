@@ -1,0 +1,9 @@
+site_name: Breaker Pannel Label Maker
+
+theme:
+  name: "material"
+
+nav:
+  - The Index: index.md
+  - tutorials.md
+  - explanation.md
