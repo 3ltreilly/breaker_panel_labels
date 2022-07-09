@@ -8,8 +8,9 @@ tracked or not
 """
 import math
 import re
+import tkinter as tk
 from pathlib import Path
-import os
+from tkinter import filedialog
 
 import click
 import pandas as pd
@@ -29,15 +30,15 @@ def parse_circuits(row):
 
     Examples:
         >>> parse_circuits(
-            pd.DataFrame(
+            pd.Series(
                 [1, 30, "water heater", "subpanel", "basement", "basement", ""],
                 index=["number", "amp", "circuits", "panel", "room", "floor", "vue_number"],
                 )
             )
-        ["water heater"]
+        ['Water heater']
 
     Returns:
-        list: list of items controled by circuit
+        list: list of items controlled by circuit
     """
     circuits = []
     for circuit in re.split("[;|,|.]", row.circuits):
@@ -49,7 +50,7 @@ def set_floor_color(c, row):
     """Set box color based on floor
 
     Args:
-        c (report_lab_obj): report lab canvis
+        c (report_lab_obj): report lab canvas
         row (array): row from csv file
     """
     if row.floor == "basement":
@@ -76,14 +77,17 @@ the_font = "Helvetica"
 
 
 @click.command()
-@click.argument("csv_file", type=click.Path(exists=True))
-def cli(csv_file):
+# @click.argument("csv_file", type=click.Path(exists=True))
+# def cli(csv_file):
+def cli():
     print("current directory is")
     print(Path.cwd())
 
-    # app_dir = Path(__file__).parent
-    # os.chdir(app_dir)
-    # print(app_dir)
+    root = tk.Tk()
+    root.withdraw()
+
+    csv_file = Path(filedialog.askopenfilename())
+    output_dir = csv_file.parent
 
     dtypes = {
         "room": "string",
@@ -101,7 +105,7 @@ def cli(csv_file):
     )
     for panel in panels:
 
-        c = canvas.Canvas(panel + "_labels.pdf")
+        c = canvas.Canvas(csv_file.with_name(panel + "_labels.pdf").as_posix())
         # move the origin up and to the left
         # c.translate(inch,inch)
         # textobject = c.beginText(0, 650)
@@ -136,8 +140,7 @@ def cli(csv_file):
             # make rounded corners
             c.setLineJoin(1)
             c.rect(x + fudge, y, box_w - fudge, box_h, fill=0)
-            # c.setFillColor()
-            # c.drawCentredString(x+dx/2, y+texty, name)
+
             textobject = c.beginText(x + box_line + fudge, y + box_h - box_line * 2)
             textobject.setFont(the_font, 10)
             # add room name
@@ -167,7 +170,7 @@ def cli(csv_file):
                 circ_num_obj.setFont(the_font, 6)
                 circ_num_obj.textLine(row.amp)
                 circ_num_obj.textLine("Amps")
-            # add Empria tracking number
+            # add Emporia tracking number
             if row.vue_number:
                 tweak = [-3, -1]
                 if len(row.vue_number) == 1:
@@ -196,7 +199,9 @@ def cli(csv_file):
         c.save()
 
         doc = SimpleDocTemplate(
-            panel + "circuit_table.pdf", pagesize=letter, topMargin=inch / 2
+            csv_file.with_name(panel + "circuit_table.pdf").as_posix(),
+            pagesize=letter,
+            topMargin=inch / 2,
         )
         elements = []
         # make table of circuits sorted by floor and room
