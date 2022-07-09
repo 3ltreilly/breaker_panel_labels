@@ -6,7 +6,7 @@
         {
             "label": "build app",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/bin/pyinstaller --onefile make_labels_report_lab.py"
+            "command": "${workspaceFolder}/.venv/bin/pyinstaller --onefile --windowed make_labels_report_lab.py"
         }
     ]
 }
