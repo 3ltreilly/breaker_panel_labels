@@ -68,7 +68,6 @@ box_h = inch
 start_point = [0, 11 * inch]  # top of page
 box_line = 6
 fudge = 32
-panels = ["subpanel", "main"]
 the_font = "Courier"
 the_font = "Helvetica"
 
@@ -101,14 +100,14 @@ def cli(csv_file):
         dtype=dtypes,
         #   keep_default_na=False
     )
+
+    # Get unique list of panels in the csv.  Output separate set of files
+    # for each panel listed
+    panels = df.panel.unique()
+
     for panel in panels:
 
         c = canvas.Canvas(csv_file.with_name(panel + "_labels.pdf").as_posix())
-        # move the origin up and to the left
-        # c.translate(inch,inch)
-        # textobject = c.beginText(0, 650)
-        # textobject.setFont(the_font, 14)
-        # c.rect(0,650,200,30)
         for index, row in df.iterrows():
             if row.panel != panel:
                 continue
@@ -197,7 +196,7 @@ def cli(csv_file):
         c.save()
 
         doc = SimpleDocTemplate(
-            csv_file.with_name(panel + "circuit_table.pdf").as_posix(),
+            csv_file.with_name(panel + "_circuit_table.pdf").as_posix(),
             pagesize=letter,
             topMargin=inch / 2,
         )
