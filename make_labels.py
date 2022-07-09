@@ -77,17 +77,19 @@ the_font = "Helvetica"
 
 
 @click.command()
-# @click.argument("csv_file", type=click.Path(exists=True))
-# def cli(csv_file):
-def cli():
+@click.argument("csv_file", type=click.Path(exists=True), required=False)
+def cli(csv_file):
+# def cli():
     print("current directory is")
     print(Path.cwd())
 
-    root = tk.Tk()
-    root.withdraw()
+    # check for argument, if not there ask for it in a gui
+    if not csv_file:
+        root = tk.Tk()
+        root.withdraw()
+        csv_file = filedialog.askopenfilename()
 
-    csv_file = Path(filedialog.askopenfilename())
-    output_dir = csv_file.parent
+    csv_file = Path(csv_file)
 
     dtypes = {
         "room": "string",
