@@ -1,10 +1,7 @@
-"""
-make labels for breaker panel
-list what is controls
-list amps
-color code for which floor, colored box
-list the room(s)???
-tracked or not
+"""Make color coded pdf of your circuit breaker labels
+
+Returns:
+    pdf: PDF of labels
 """
 import math
 import re
@@ -79,7 +76,6 @@ the_font = "Helvetica"
 @click.command()
 @click.argument("csv_file", type=click.Path(exists=True), required=False)
 def cli(csv_file):
-# def cli():
     print("current directory is")
     print(Path.cwd())
 
