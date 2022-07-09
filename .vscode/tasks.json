@@ -12,6 +12,11 @@
             "label": "publish docs",
             "type": "shell",
             "command": "${workspaceFolder}/.venv/bin/mkdocs gh-deploy"
+        },
+        {
+            "label": "test docs",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/bin/xdoctest make_labels.py"
         }
     ]
 }
