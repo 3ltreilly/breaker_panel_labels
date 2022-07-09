@@ -8,6 +8,7 @@ authors = ["Bernie Reilly <reilly_bernie@mac.com>"]
 python = ">=3.9,<3.11"
 reportlab = "^3.6.8"
 pandas = "^1.4.1"
+click = "^8.1.3"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"
