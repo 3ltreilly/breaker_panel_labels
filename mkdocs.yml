@@ -5,9 +5,14 @@ theme:
 
 plugins:
   - mkdocstrings
+  - search
+
+use_directory_urls: false
 
 nav:
-  - The Index: index.md
-  - tutorials.md
-  - explanation.md
+  - index.md
+  # - tutorials.md
+  # - explanation.md
   - API Reference: reference.md
+
+repo_url: https://github.com/3ltreilly/breaker_panel_labels
