@@ -4,9 +4,16 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Delete app",
+            "type": "shell",
+            "command": "rm -rf ${workspaceFolder}/dist/make_labels ${workspaceFolder}/dist/make_labels.app"
+
+        },
+        {
             "label": "build app",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/bin/pyinstaller --onefile --windowed make_labels.py"
+            "command": "${workspaceFolder}/.venv/bin/pyinstaller --onefile --windowed make_labels.py",
+            "dependsOn":["Delete app"]
         },
         {
             "label": "publish docs",
