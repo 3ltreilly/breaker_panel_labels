@@ -6,6 +6,8 @@ Example output
 
 ![](images/labels.png)
 
+## Inputs
+
 Create a csv file using this format.  Separate the `circuits` cell with `;` to list multiple items.
 
 
