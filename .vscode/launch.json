@@ -22,6 +22,16 @@
                 "breaker panel labels.csv"
             ],
             "justMyCode": true
+        },
+        {
+            "name": "help",
+            "type": "python",
+            "request": "launch",
+            "program": "make_labels.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--help"
+            ],
         }
     ]
 }
