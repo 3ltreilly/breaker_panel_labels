@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "breaker_panel_labels"
+name = "make_labels"
 version = "0.1.0"
 description = "Make labels for breaker panel"
 authors = ["Bernie Reilly <reilly_bernie@mac.com>"]
@@ -18,6 +18,8 @@ mkdocstrings = {extras = ["python"], version = "^0.19.0"}
 mkdocs-material = "^8.3.9"
 pyinstaller = "^5.1"
 xdoctest = "^1.0.0"
+mkdocs-click = "^0.8.0"
+mkdocs-codeinclude-plugin = "^0.2.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
