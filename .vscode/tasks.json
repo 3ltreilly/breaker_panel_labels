@@ -28,7 +28,7 @@
         {
             "label": "test docs",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/bin/xdoctest make_labels.py"
+            "command": "${workspaceFolder}/.venv/bin/xdoctest make_labels/make_labels.py"
         }
     ]
 }
