@@ -8,7 +8,7 @@
             "name": "no args",
             "type": "python",
             "request": "launch",
-            "program": "make_labels.py",
+            "program": "${workspaceFolder}/make_labels/make_labels.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },
@@ -16,10 +16,10 @@
             "name": "with arg",
             "type": "python",
             "request": "launch",
-            "program": "make_labels.py",
+            "program": "${workspaceFolder}/make_labels/make_labels.py",
             "console": "integratedTerminal",
             "args": [
-                "breaker panel labels.csv"
+                "home panel.csv"
             ],
             "justMyCode": true
         },
