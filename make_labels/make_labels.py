@@ -45,7 +45,7 @@ def parse_circuits(row):
     return circuits
 
 
-def set_floor_color(canvas, row):
+def set_floor_color(the_canvas, row):
     """Set box color based on floor
 
     Args:
@@ -53,15 +53,15 @@ def set_floor_color(canvas, row):
         row (array): row from csv file
     """
     if row.floor == "basement":
-        canvas.setStrokeColor(colors.blue)
+        the_canvas.setStrokeColor(colors.blue)
     elif row.floor == "1st":
-        canvas.setStrokeColor(colors.green)
+        the_canvas.setStrokeColor(colors.green)
     elif row.floor == "2nd":
-        canvas.setStrokeColor(colors.red)
+        the_canvas.setStrokeColor(colors.red)
     elif row.floor == "outside":
-        canvas.setStrokeColor(colors.brown)
+        the_canvas.setStrokeColor(colors.brown)
     else:
-        canvas.setStrokeColor(colors.gray)
+        the_canvas.setStrokeColor(colors.gray)
 
 
 # inputs
@@ -113,9 +113,10 @@ def cli(csv_file):
     panels = df.panel.unique()
 
     for panel in panels:
-
-        can = canvas.Canvas(csv_file.with_name(panel + "_labels.pdf").as_posix())
-        for index, row in df.iterrows():
+        label_file = f"{csv_file.stem}_{panel}_labels.pdf"
+        table_file = f"{csv_file.stem}_{panel}_table.pdf"
+        can = canvas.Canvas(label_file)
+        for _index, row in df.iterrows():
             if row.panel != panel:
                 continue
             # check for 20th breaker
@@ -203,7 +204,7 @@ def cli(csv_file):
         can.save()
 
         doc = SimpleDocTemplate(
-            csv_file.with_name(panel + "_circuit_table.pdf").as_posix(),
+            csv_file.with_name(table_file).as_posix(),
             pagesize=letter,
             topMargin=inch / 2,
         )
