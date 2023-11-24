@@ -77,7 +77,7 @@ THE_FONT = "Helvetica"
 @click.command()
 @click.argument("csv_file", type=click.Path(exists=True), required=False)
 def cli(csv_file):
-    """Make color coded brake panel label
+    """Make color coded breaker panel label
 
     Args:
         csv_file (str): file with panel info.
@@ -113,6 +113,7 @@ def cli(csv_file):
     panels = df.panel.unique()
 
     for panel in panels:
+        # make file names bases on input file and panel column
         label_file = f"{csv_file.stem}_{panel}_labels.pdf"
         table_file = f"{csv_file.stem}_{panel}_table.pdf"
         can = canvas.Canvas(label_file)
