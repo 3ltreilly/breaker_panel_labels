@@ -12,7 +12,7 @@
         {
             "label": "build app",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/bin/pyinstaller --onefile --windowed make_labels.py",
+            "command": "${workspaceFolder}/.venv/bin/pyinstaller --onefile --windowed ${workspaceFolder}/make_labels/make_labels.py",
             "dependsOn":["Delete app"]
         },
         {
