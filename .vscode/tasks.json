@@ -21,9 +21,14 @@
             "command": "${workspaceFolder}/.venv/bin/mkdocs gh-deploy"
         },
         {
+            "label": "make local docs",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/bin/mkdocs serve"
+        },
+        {
             "label": "test docs",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/bin/xdoctest make_labels.py"
+            "command": "${workspaceFolder}/.venv/bin/xdoctest make_labels/make_labels.py"
         }
     ]
 }
