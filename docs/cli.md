@@ -9,5 +9,5 @@
 [download](https://github.com/3ltreilly/breaker_panel_labels/archive/refs/heads/main.zip)
 
 <!--codeinclude-->
-[Human readable title for snippet](../mkdocs.yml)
+[Test of reference file from repo](../mkdocs.yml)
 <!--/codeinclude-->
