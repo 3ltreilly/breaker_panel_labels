@@ -6,6 +6,12 @@ theme:
 plugins:
   - mkdocstrings
   - search
+  - codeinclude:
+      title_mode: pymdownx.tabbed 
+
+markdown_extensions:
+    - attr_list
+    - mkdocs-click
 
 use_directory_urls: false
 
@@ -14,5 +20,6 @@ nav:
   # - tutorials.md
   # - explanation.md
   - API Reference: reference.md
+  - cli.md
 
 repo_url: https://github.com/3ltreilly/breaker_panel_labels
