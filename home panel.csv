@@ -2,12 +2,12 @@
 1,30,water heater,subpanel,basement,basement,
 3,30,water heater,subpanel,basement,basement,1
 5,20,Fridge,subpanel,kitchen,1st,3
-7,15,master bed room lights; master bed room plugs;  Master bath lights,subpanel,master bed,2nd,9
+7,15,master bed room lights; master bed room plugs;  Master bath lights,subpanel,master bed,2nd,
 9,15,"hallway lights. hallway plugs, laundary light.  Smoke and attic?, Shelly EM",subpanel,hall and laundary,2nd,
 11,20,TV Closet,subpanel,tv room,1st,5
 2,15,"Kitchen light, mud room light, office light",subpanel,"kitchen, mud, office",1st,
 4,20,furance,subpanel,basement,basement,2
-6,20,"chest freezer, work bench. Water treatment",subpanel,basement,basement,4
+6,20,"chest freezer, work bench, Water treatment, plug under subpannel",subpanel,basement,basement,4
 8,20,well,subpanel,basement,basement,
 10,20,well,subpanel,basement,basement,
 12,15,bonus room plugs. Bonus room light,subpanel,bonus room,2nd,6
@@ -18,7 +18,7 @@
 9,15,"plugs, fan, light",main,callies room,2nd,8
 11,,EMPTY,main,,,
 13,,EMPTY,main,,,
-15,20,"master bath plugs, guest bath plugs",main,bath rooms,2nd,
+15,20,"master bath plugs, guest bath plugs",main,bath rooms,2nd,9
 17,100,sub-panel,main,basement,basement,
 19,100,sub-panel,main,basement,basement,
 21,20,washer,main,laundry room,2nd,
